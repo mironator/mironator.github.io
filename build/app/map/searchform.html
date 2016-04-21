@@ -1,0 +1,72 @@
+<div data-ng-controller="SearchForm as vm" class="col-xs-12 col-sm-4 col-md-2">
+    {{vm.title}}
+    <form role="form" name="searchForm" ng-submit="vm.update();">
+
+        <div class="row">
+			<div class="form-group col-md-12">
+				<label for="text">{{vm.label.text}}</label>
+				<input id="text" ng-model="vm.filter.text"  type="text" class="form-control" ng-change="vm.update()" autofocus/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-12">
+				<label for="experience">{{vm.label.experience}}</label>
+				<select id="experience" ng-model="vm.filter.experience" class="form-control" ng-change="vm.update()">
+					<option ng-repeat="x in vm.enumeration.experiencies" value="{{x.id}}">{{x.name}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-12">
+				<label for="employment">{{vm.label.employment}}</label>
+				<select multiple id="employment" ng-model="vm.filter.employment" class="form-control" ng-change="vm.update()">
+					<option ng-repeat="x in vm.enumeration.employments" value="{{x.id}}">{{x.name}}</option>
+				</select>
+
+				<!--multiple-autocomplete id="employment" 
+					ng-model="vm.filter.employment"
+					object-property="name"
+					suggestions-arr="vm.enumeration.employments"
+					md-selected-item-change="vm.update()" >
+				</multiple-autocomplete-->
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-12">
+				<label for="schedule">{{vm.label.schedule}}</label>
+				<select multiple ng-model="vm.filter.schedule" class="form-control" ng-change="vm.update()">
+					<option ng-repeat="x in vm.enumeration.schedules" value="{{x.id}}">{{x.name}}</option>
+				</select>
+
+				<!--multiple-autocomplete id="schedule" 
+					ng-model="vm.filter.schedule"
+					object-property="name"
+					suggestions-arr="vm.enumeration.schedules" 
+					md-selected-item-change="vm.update()" >
+				</multiple-autocomplete-->
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-md-12">
+				<label for="salary">{{vm.label.salary}}</label>
+				<input id="salary" type="number" name="salary" min="0" ng-model="vm.filter.salary" class="form-control" ng-change="vm.update()" />
+				<span ng-show="searchForm.salary.$invalid">Wrong number format.</span>
+			</div>
+			<div class="form-group col-xs-12 col-md-7">
+				<label for="currency">{{vm.label.currency}}</label>
+				<select ng-model="vm.filter.currency" class="form-control" ng-change="vm.update()">
+					<option ng-repeat="x in vm.enumeration.currencies" value="{{x.code}}">{{x.code}}</option>
+				</select>
+			</div>
+		</div>
+
+        
+        <!--div class="row">
+            <div class="form-group col-xs-6 col-md-3">
+                <button type="submit" class="btn btn-success form-control">Search</button >
+            </div>
+        </div-->
+
+    </form>
+</div>
