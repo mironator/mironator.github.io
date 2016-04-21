@@ -8,6 +8,7 @@
     Display.$inject = ['$scope', 'dataservice', 'logger'];
 
 	function Display($scope, dataservice, logger){
+        L.Icon.Default.imagePath = 'img'
 		var vm = this;
         vm.map = undefined;
         vm.markers = undefined;
