@@ -1,0 +1,21 @@
+{
+  "name": "Test Task",
+  "description": "Testing acquired knowledge",
+  "main": "",
+  "authors": [
+    "A. Mironchenko"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "bootstrap": "latest"
+  }
+}
